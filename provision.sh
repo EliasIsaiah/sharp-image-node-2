@@ -1,16 +1,13 @@
 apt-get update
 
-apt-get install -y git
-
 sudo timedatectl set-timezone America/New_York
 
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-apt-get install -y build-essential nodejs
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+sudo apt-get install -y build-essential nodejs
 
-cd /var/www/client
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
 
-npm i -g @angular/cli
-npm i
-
-cd /var/www/server
+cd /var/www
 npm i
